@@ -1,0 +1,564 @@
+* {
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+}
+
+:root {
+    --maincolor: #10cab7;
+    --secondary-color: #2c4755;
+    --third-color: #f0f5f8;
+    --Padding-value: 20px
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Work Sans", sans-serif;
+}
+
+
+.container {
+    padding: 0px 15px;
+    margin: 0px auto;
+
+}
+
+@media (min-width: 768px) {
+    .container {
+        width: 750px;
+    }
+}
+
+/* Medium */
+@media (min-width: 992px) {
+    .container {
+        width: 970px;
+    }
+}
+
+/* Large */
+@media (min-width: 1200px) {
+    .container {
+        width: 1170px;
+    }
+}
+
+.special-heading {
+    font-weight: 800;
+    font-size: 100px;
+    text-align: center;
+    color: #ebeced;
+}
+
+.special-heading+p {
+    margin: -30px 0px;
+    text-align: center;
+    color: #797979;
+    font-size: 20px;
+}
+
+@media (max-width : 700px) {
+    .special-heading {
+        font-size: 50px;
+    }
+
+    .special-heading+p {
+        margin-top: -20px;
+    }
+
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px;
+
+}
+
+/* -------------------------------------------------------- Start Header ---------------------------------------------------------- */
+
+.header {
+    padding: var(--Padding-value);
+}
+
+.header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header .logo {
+    width: 50px;
+}
+
+.header .links {
+    display: flex;
+    position: relative;
+}
+
+.header .links ul {
+    position: absolute;
+    right: 0px;
+    top: calc(100% + 10px);
+    list-style: none;
+    background-color: var(--third-color);
+    width: 200px;
+    display: none;
+    z-index: 2;
+}
+
+.header .links ul::before {
+    content: "";
+    border-color: transparent transparent var(--third-color) transparent;
+    border-style: solid;
+    border-width: 10px;
+    position: absolute;
+    right: 1px;
+    top: -16px;
+}
+
+.header .links ul li a {
+    display: block;
+    padding: 15px;
+    text-decoration: none;
+    color: #333;
+    border-bottom: #DDD 3px solid;
+    transition: .3s;
+
+}
+
+.header .links ul li:last-child a {
+    border: none;
+}
+
+.header .links ul li a:hover {
+    padding-left: 25px;
+    font-size: 20px;
+    color: aqua;
+}
+
+.header .links:hover ul {
+    display: block;
+}
+
+/* -------------------------------------------------------- End Header ---------------------------------------------------------- */
+
+/* -------------------------------------------------------- Start Landing ------------------------------------------------------- */
+
+.landing {
+    background-image: url(../Images/slide-2-1024x320.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: calc(100vh - 60px);
+    position: relative;
+
+}
+
+.landing .intro-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 300px;
+    max-width: 100%;
+    text-align: center;
+
+
+}
+
+.landing .intro-text h1 {
+    text-align: center;
+    color: var(--maincolor);
+    margin: 0px;
+    font-weight: bold;
+    font-size: 50px;
+}
+
+/* -------------------------------------------------------- end Landing ------------------------------------------------------- */
+
+/* -------------------------------------------------------- Start Feature ------------------------------------------------------- */
+.feature {
+    padding: var(--Padding-value) 0px;
+    margin: 100px 20px 0px 20px;
+
+}
+
+.feature .item {
+    padding: var(--Padding-value);
+    text-align: center;
+    background-color: var(--third-color);
+    border-bottom: var(--maincolor) 2px none;
+    border-radius: 40px;
+    transition: .8s ease-in;
+}
+
+.feature .item i {
+    color: var(--maincolor);
+    padding-bottom: var(--Padding-value);
+}
+
+.feature h3 {
+    font-weight: 800;
+    padding-bottom: var(--Padding-value);
+
+}
+
+.features .feat p {
+    line-height: 1.8;
+    color: #777;
+    font-size: 17px;
+}
+
+.feature .item:hover {
+    transform: scale(1.1, 1.1);
+    border-bottom-style: solid;
+}
+
+.feature:hover .item:not(:hover) {
+    filter: blur(3px);
+    transform: scale(.9, .9);
+}
+
+/* -------------------------------------------------------- End Landing ------------------------------------------------------- */
+/* -------------------------------------------------------- Start Services ------------------------------------------------------- */
+
+.Services .container .outer-grid {
+    display: flex;
+    margin-top: 100px;
+    gap: 30px;
+}
+
+
+.Services .container .grid .ser {
+    display: flex;
+    gap: 20px;
+
+}
+
+.Services .container .grid .ser i {
+    color: var(--maincolor);
+}
+
+.Services .container .grid .ser .text h3,
+.portflio .container .grid .flex-items .info-item h3 {
+    padding-bottom: var(--Padding-value);
+    font-weight: 800px;
+}
+
+.Services .container .outer-grid .image {
+    position: relative;
+}
+
+.Services .container .outer-grid .image::after {
+    content: "";
+    position: absolute;
+    top: -50px;
+    right: -50px;
+    height: calc(100% + 100px);
+    width: 100px;
+    background-color: var(--secondary-color);
+    z-index: -1;
+}
+
+@media (max-width : 1000px) {
+    .image {
+        display: none;
+    }
+
+}
+
+@media (max-width : 750px) {
+    .grid>div {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+
+/* -------------------------------------------------------- End Services ------------------------------------------------------- */
+/* -------------------------------------------------------- Start Portflio ------------------------------------------------------- */
+
+.portflio {
+    padding: calc(var(--Padding-value) + 20px)  0px;
+    margin: 100px 20px 0px 20px;
+    background-color: #cdcbcb33;
+}
+
+.portflio .container .grid-margin {
+    margin-top: 100px;
+}
+
+.portflio .container .grid .flex-items {
+    border-radius: 40px;
+    background-color: white;
+    border-bottom: var(--maincolor) 2px none;
+    transform: scale(.8, .8);
+    transition: .8s ease-in-out;
+}
+
+.portflio .container .grid .flex-items img {
+    filter: blur(3px);
+    width: 100%;
+    height: 250px;
+    border-radius: 40px 40px 0px 0px;
+
+}
+
+.portflio .container .grid .flex-items:hover {
+    transform: scale(1.1, 1.1);
+    border-bottom-style: solid;
+}
+
+.portflio .container .grid .flex-items:not(:hover) {
+    filter: blur(3px);
+    transform: scale(.9, .9);
+}
+
+.portflio .container .grid .flex-items:hover img {
+    filter: blur(0px);
+}
+
+
+.portflio .container .grid .flex-items .info-item {
+    padding: var(--Padding-value);
+}
+
+
+
+
+
+/* -------------------------------------------------------- End Portflio ------------------------------------------------------- */
+
+/* -------------------------------------------------------- start about ------------------------------------------------------- */
+
+.about {
+    padding: var(--Padding-value) 0px;
+}
+
+.about .container .flex {
+    margin-top: 100px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+@media (max-width: 991px) {
+    .about .container .flex {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+
+.about .container .flex .info {
+    flex-basis: calc(70% - 225px);
+}
+
+.about .container .flex .info p:first-child {
+    font-weight: bold;
+    font-size: 20px;
+    padding-bottom: 50px;
+}
+
+.about .container .flex .info p:last-child {
+    padding-top: var(--Padding-value);
+    color: #777;
+}
+
+.about .container .flex .info hr {
+    width: 50%;
+    height: 2px;
+    background-color: var(--maincolor);
+}
+
+.about .container .flex .image {
+    position: relative;
+    width: 225px;
+    height: 225px;
+}
+
+.about .container .flex .image::before {
+    content: "";
+    width: 50px;
+    height: 60%;
+    background-color: var(--maincolor);
+    position: absolute;
+    right: -25px;
+    top: -20px;
+    z-index: -1;
+
+}
+
+.about .container .flex .image::after {
+    content: "";
+    width: 150px;
+    height: 20%;
+    background-color: var(--maincolor);
+    position: absolute;
+    right: -75px;
+    top: 50%;
+    z-index: -1;
+
+}
+
+@media (max-width:991px) {
+
+    .about .container .flex .image::before,
+    .about .container .flex .image::after {
+        display: none;
+    }
+
+}
+
+
+/* -------------------------------------------------------- End about ------------------------------------------------------- */
+
+/* -------------------------------------------------------- Start contact ------------------------------------------------------- */
+
+.contact {
+    padding: var(--Padding-value) 0px;
+    margin: 100px 20px 0px 20px;
+    background-color: #cdcbcb33;
+}
+
+
+
+.contact .container .contact-info {
+    padding: 100px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    text-align: center;
+
+}
+
+.contact .container .contact-info>p {
+    font-size: 35px;
+    font-weight: 600;
+    color: var(--secondary-color);
+}
+
+.contact .container .contact-info .gmail {
+    color: var(--maincolor);
+    font-weight: 600;
+    font-size: 30px;
+    text-decoration: none;
+}
+
+.contact .container .contact-info .social {
+    font-size: 15px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 15px;
+
+}
+
+.contact .container .contact-info .social .social-link {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+
+.contact .container .contact-info .social .social-link>div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 40px;
+    width: 40px;
+    border-radius: 10px;
+    background-color: rgb(7, 101, 255);
+    opacity: .4;
+    transition: .4s;
+}
+
+.contact .container .contact-info .social .social-link>div:hover {
+    opacity: 1;
+    transform: scale(1.4, 1.4);
+}
+
+.contact .container .contact-info .social .social-link a i {
+    font-size: 25px;
+    color: white;
+}
+
+
+
+@media (max-width : 767px) {
+    .contact .container .contact-info .gmail {
+        font-size: 20px;
+    }
+
+    .contact .container .contact-info>p {
+        font-size: 25px;
+    }
+
+    .contact .container .contact-info .social .social-link>div {
+        width: 30px;
+        height: 30px;
+    }
+
+    .contact .container .contact-info .social .social-link a i {
+        font-size: 15px;
+    }
+
+}
+
+@media (max-width : 500px) {
+    .contact .container .contact-info .gmail {
+        font-size: 8px;
+    }
+
+    .contact .container .contact-info>p {
+        font-size: 9px;
+    }
+
+    .contact .container .contact-info .social {
+        font-size: 5px;
+    }
+
+    .contact .container .contact-info .social .social-link>div {
+        width: 20px;
+        height: 20px;
+    }
+
+    .contact .container .contact-info .social .social-link a i {
+        font-size: 10px;
+    }
+
+}
+
+/* -------------------------------------------------------- End contact ------------------------------------------------------- */
+
+/* -------------------------------------------------------- Start footer ------------------------------------------------------- */
+
+.footer {
+    text-align: center;
+    padding: var(--Padding-value);
+    margin: 0px 20px;
+    background-color: var(--secondary-color);
+    color: white;
+    font-size: 18px;
+}
+
+.footer span {
+    color: var(--maincolor);
+    font-weight: bold;
+}
+
+@media (max-width : 767px) {
+    .footer {
+        font-size: 10px;
+    }
+}
+
+
+/* -------------------------------------------------------- end footer ------------------------------------------------------- */
